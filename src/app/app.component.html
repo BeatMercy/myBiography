@@ -1,4 +1,4 @@
-<mat-toolbar color='primary'>
+<mat-toolbar [@titleState]='this.titleState' color='primary'>
     <span>{{title}}</span>
 </mat-toolbar>
 <mat-toolbar color='accent'>
@@ -7,3 +7,4 @@
 <mat-toolbar color='warn'>
     <span>{{title}}</span>
 </mat-toolbar>
+<button (click)="toggleTitleState()" >ToggleTitle</button>
