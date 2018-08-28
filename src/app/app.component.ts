@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ThemePalette } from '@angular/material';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import * as showdown from 'showdown';
 
 @Component({
   selector: 'app-root',
@@ -20,11 +21,16 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
       transition('active => inactive', animate('100ms ease-out'))
     ])]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'app';
   color: ThemePalette;
   titleState = 'inactive';
+  blogText = '';
 
+  ngOnInit(): void {
+    const converter = new showdown.Converter();
+    this.blogText = converter.makeHtml('#hellow Markdown');
+  }
   toggleTitleState() {
     this.titleState = this.titleState === 'inactive' ? this.titleState = 'active' : 'inactive';
   }
