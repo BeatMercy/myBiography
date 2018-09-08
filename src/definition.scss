@@ -1,0 +1,40 @@
+// Definition of common @Mixin here
+@mixin display_grid {
+    display: grid;
+    display: -ms-grid;
+}
+
+@mixin display_flex {
+    display: flex;
+    display: -webkit-flex;
+}
+
+/* animation.scss */
+
+@mixin animation($name, $duration, $function: ease, $delay: 0s, $count: infinite) {
+    -webkit-animation: $name $duration $function $delay $count;
+    -moz-animation: $name $duration $function $delay $count;
+    -ms-animation: $name $duration $function $delay $count;
+    -o-animation: $name $duration $function $delay $count;
+    animation: $name $duration $function $delay $count;
+}
+
+/* keyframes.scss */
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-ms-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}

@@ -1,0 +1,67 @@
+@import '../definition.scss';
+@mixin setColorAndHover($baseColor) {
+    color: $baseColor;
+    &:hover {
+        background: lighten($baseColor, 20%);
+    }
+}
+
+$bg: #4F000B;
+$itemBg1: #720026;
+$itemBg2: #CE4257;
+$itemBg3: #FFC093;
+$itemBg4: #FF7F51;
+$counterBg: #222;
+.waterfall {
+    min-width: 200px;
+    margin: 20px;
+    display: grid;
+    grid-auto-flow: dense;
+    @media screen and (min-width: 300px) {
+        grid-template-columns: 1fr;
+    }
+    @media screen and (min-width: 600px) {
+        grid-gap: 10px;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    @media screen and (min-width: 800px) {
+        grid-gap: 15px;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    @media screen and (min-width: 1000px) {
+        grid-gap: 20px;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.waterfall>.item {
+    transition: .2s ease-in;
+    @include setColorAndHover($itemBg1);
+    &>.thumbnail {
+        padding: 5px;
+        text-align: center;
+    }
+    &>.thumbnail>img {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    & .tags_area {
+        display: flex;
+        flex-flow: row wrap;
+    }
+    & .tags_area>a {
+        text-decoration: none;
+        color: white;
+        border-radius: 5px;
+        background-color: #FF7F51;
+        margin: 0 4px 4px 0;
+        padding: 5px;
+    }
+}
+
+.waterfall>.item {
+    &:nth-child(1) {
+        grid-row:  1/span 2;
+    }
+    
+}
