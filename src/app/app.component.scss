@@ -1,9 +1,21 @@
 @import '../definition.scss';
-@mixin setColorAndHover($baseColor) {
-    color: $baseColor;
-    &:hover {
-        background: lighten($baseColor, 20%);
-    }
+.container {
+    @include animation(showUp, .3s, ease-in, 0s, 1);
+}
+
+@mixin grid-auto-rows($min, $max) {
+    -ms-grid-auto-rows: minmax($min, $max);
+    grid-auto-rows: minmax($min, $max);
+}
+
+@mixin grid-auto-flow($policy) {
+    -ms-grid-auto-flow: $policy;
+    grid-auto-flow: $policy;
+}
+
+@mixin grid-auto-columns($min, $max) {
+    -ms-grid-auto-columns: minmax($min, $max);
+    grid-auto-columns: minmax($min, $max);
 }
 
 $bg: #4F000B;
@@ -12,29 +24,36 @@ $itemBg2: #CE4257;
 $itemBg3: #FFC093;
 $itemBg4: #FF7F51;
 $counterBg: #222;
-.waterfall {
-    min-width: 200px;
-    margin: 20px;
-    display: grid;
-    grid-auto-flow: dense;
-    @media screen and (min-width: 300px) {
-        grid-template-columns: 1fr;
-    }
-    @media screen and (min-width: 600px) {
-        grid-gap: 10px;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-    @media screen and (min-width: 800px) {
-        grid-gap: 15px;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-    @media screen and (min-width: 1000px) {
-        grid-gap: 20px;
-        grid-template-columns: repeat(4, 1fr);
+@mixin setColorAndHover($baseColor) {
+    color: $baseColor;
+    &:hover {
+        background: lighten($baseColor, 20%);
     }
 }
 
-.waterfall>.item {
+.marsonry {
+    min-width: 200px;
+    margin: 20px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.marsonry>.col {
+    margin: 0 5px;
+    display: flex;
+    flex-flow: column nowrap;
+    @media screen and (min-width: 480px) {
+        width: 100%;
+    }
+    @media screen and (min-width: 768px) {
+        width: 33.3%;
+    }
+    @media screen and (min-width: 1080px) {
+        width: 20%;
+    }
+}
+
+.marsonry>.col>.item {
     transition: .2s ease-in;
     @include setColorAndHover($itemBg1);
     &>.thumbnail {
@@ -57,11 +76,4 @@ $counterBg: #222;
         margin: 0 4px 4px 0;
         padding: 5px;
     }
-}
-
-.waterfall>.item {
-    &:nth-child(1) {
-        grid-row:  1/span 2;
-    }
-    
 }

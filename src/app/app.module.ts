@@ -37,10 +37,11 @@ import {
   MatTooltipModule,
 } from '@angular/material';
 import { AppComponent } from './app.component';
+import { ScreenService } from './service/screen.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,7 +79,9 @@ import { AppComponent } from './app.component';
     MatToolbarModule,
     MatTooltipModule,
   ],
-  providers: [],
+  providers: [
+    ScreenService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
