@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ThemePalette } from '@angular/material';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { MASONRIES } from './mock-datas/masonry';
-import { MediaMatcher } from '@angular/cdk/layout';
-import { Subject, BehaviorSubject, ObservableLike, of, Observable } from 'rxjs';
+import { BehaviorSubject, ObservableLike, of, Observable } from 'rxjs';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { ScreenService } from './service/screen.service';
 
 @Component({
@@ -30,7 +30,6 @@ export class AppComponent implements OnInit {
   title = 'app';
   color: ThemePalette;
   titleState = '';
-
   masonries = MASONRIES;
   screenLevel$ = new BehaviorSubject(2);
   requireColumn = 5;
@@ -62,7 +61,8 @@ export class AppComponent implements OnInit {
           default: break;
         }
       }
-      console.log(`next screen is :${x}, require column: ${this.requireColumn}`);
+      this.screenService.defaultScreenLevelSubscribe();
+      console.log(`Now the screen Level :${x}, require column: ${this.requireColumn}`);
     },
     error: err => console.error('Observer got an error: ' + err),
     complete: () => console.log('Observer got a complete notification'),
@@ -72,19 +72,17 @@ export class AppComponent implements OnInit {
 
   }
 
+  changeRequireColumn(num: number) {
+
+  }
+
   ngOnInit(): void {
     this.screenLevel$ = this.screenService.screenLevel$;
-    this.screenLevel$.subscribe(this.resizeMarsonryObserver);
-
+    this.screenLevel$.pipe(debounceTime(200)).subscribe(this.resizeMarsonryObserver);
   }
   toggleTitleState() {
     this.titleState === 'active' ? this.titleState = '' : this.titleState = 'active';
-    this.screenLevel$.subscribe();
-  }
-
-  ifRequireColumn(num: number) {
-    console.log(`${this.requireColumn} > ${num}: ${this.requireColumn > num}`);
-    return this.requireColumn > num;
+    // this.screenLevel$.subscribe();
   }
 
 }
