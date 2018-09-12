@@ -1,3 +1,21 @@
+@mixin desktop_screen {
+    @media screen and (min-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet_screen {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin mobile_screen {
+    @media screen and (min-width: 480px) {
+        @content;
+    }
+}
+
 // Definition of common @Mixin here
 @mixin display_grid {
     display: grid;
@@ -39,7 +57,7 @@
     }
 }
 
-@include keyframes(showUp){
+@include keyframes(showUp) {
     from {
         opacity: 0;
     }

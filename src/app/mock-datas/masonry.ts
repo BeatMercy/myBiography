@@ -11,7 +11,7 @@ export const MASONRIES = [{
     abstract: 'TEROR is very danger with nuclear here. For the security',
     images: [{
         caption: 'image here',
-        path: 'assets/images/umaru.jpg',
+        path: 'assets/images/umaru.webp',
     }]
 }, {
     title: 'DEMO',
@@ -41,7 +41,7 @@ export const MASONRIES = [{
     abstract: '',
     images: [{
         caption: 'image here',
-        path: 'assets/images/768x1280.jpg',
+        path: 'assets/images/768x1280.webp',
     }]
 }, {
     title: 'DEMO',
@@ -56,7 +56,7 @@ export const MASONRIES = [{
     abstract: 'TEROR is very danger with nuclear here. For the security',
     images: [{
         caption: 'image here',
-        path: 'assets/images/umaru.jpg',
+        path: 'assets/images/umaru.webp',
     }]
 }, {
     title: 'DEMO',
@@ -71,7 +71,7 @@ export const MASONRIES = [{
     abstract: 'TEROR is very danger with nuclear here. For the security',
     images: [{
         caption: 'image here',
-        path: 'assets/images/umaru.jpg',
+        path: 'assets/images/umaru.webp',
     }]
 }, {
     title: 'DEMO',
@@ -131,7 +131,7 @@ export const MASONRIES = [{
     abstract: 'TEROR is very danger with nuclear here. For the security',
     images: [{
         caption: 'image here',
-        path: 'assets/images/umaru.jpg',
+        path: 'assets/images/umaru.webp',
     }]
 }, {
     title: 'DEMO',
@@ -161,7 +161,7 @@ export const MASONRIES = [{
     abstract: 'TEROR is very danger with nuclear here. For the security',
     images: [{
         caption: 'image here',
-        path: 'assets/images/768x1280.jpg',
+        path: 'assets/images/768x1280.webp',
     }]
 }, {
     title: 'DEMO',
@@ -191,7 +191,7 @@ export const MASONRIES = [{
     abstract: 'TEROR is very danger with nuclear here. For the security',
     images: [{
         caption: 'image here',
-        path: 'assets/images/umaru.jpg',
+        path: 'assets/images/umaru.webp',
     }]
 }, {
     title: 'DEMO',
@@ -221,7 +221,7 @@ export const MASONRIES = [{
     abstract: 'TEROR is very danger with nuclear here. For the security',
     images: [{
         caption: 'image here',
-        path: 'assets/images/umaru.jpg',
+        path: 'assets/images/umaru.webp',
     }]
 }, {
     title: 'DEMO',
@@ -236,7 +236,7 @@ export const MASONRIES = [{
     abstract: 'TEROR is very danger with nuclear here. For the security',
     images: [{
         caption: 'image here',
-        path: 'assets/images/umaru.jpg',
+        path: 'assets/images/umaru.webp',
     }]
 }, {
     title: 'DEMO',
@@ -251,7 +251,7 @@ export const MASONRIES = [{
     abstract: 'TEROR is very danger with nuclear here. For the security',
     images: [{
         caption: 'image here',
-        path: 'assets/images/768x1280.jpg',
+        path: 'assets/images/768x1280.webp',
     }]
 }, {
     title: 'DEMO',
@@ -266,7 +266,7 @@ export const MASONRIES = [{
     abstract: 'TEROR is very danger with nuclear here. For the security',
     images: [{
         caption: 'image here',
-        path: 'assets/images/umaru.jpg',
+        path: 'assets/images/umaru.webp',
     }]
 }, {
     title: 'DEMO',
@@ -281,7 +281,7 @@ export const MASONRIES = [{
     abstract: 'TEROR is very danger with nuclear here. For the security',
     images: [{
         caption: 'image here',
-        path: 'assets/images/umaru.jpg',
+        path: 'assets/images/umaru.webp',
     }]
 }, {
     title: 'DEMO',
@@ -296,7 +296,7 @@ export const MASONRIES = [{
     abstract: 'TEROR is very danger with nuclear here. For the security',
     images: [{
         caption: 'image here',
-        path: 'assets/images/umaru.jpg',
+        path: 'assets/images/umaru.webp',
     }]
 }, {
     title: 'DEMO',
@@ -311,7 +311,7 @@ export const MASONRIES = [{
     abstract: 'TEROR is very danger with nuclear here. For the security',
     images: [{
         caption: 'image here',
-        path: 'assets/images/umaru.jpg',
+        path: 'assets/images/umaru.webp',
     }]
 }, {
     title: 'DEMO',
@@ -326,7 +326,7 @@ export const MASONRIES = [{
     abstract: 'TEROR is very danger with nuclear here. For the security',
     images: [{
         caption: 'image here',
-        path: 'assets/images/umaru.jpg',
+        path: 'assets/images/umaru.webp',
     }]
 }, {
     title: 'DEMO',
@@ -341,7 +341,7 @@ export const MASONRIES = [{
     abstract: 'TEROR is very danger with nuclear here. For the security',
     images: [{
         caption: 'image here',
-        path: 'assets/images/umaru.jpg',
+        path: 'assets/images/umaru.webp',
     }]
 }, {
     title: 'DEMO',
@@ -356,7 +356,7 @@ export const MASONRIES = [{
     abstract: 'TEROR is very danger with nuclear here. For the security',
     images: [{
         caption: 'image here',
-        path: 'assets/images/umaru.jpg',
+        path: 'assets/images/umaru.webp',
     }]
 }, {
     title: 'DEMO',
@@ -371,7 +371,7 @@ export const MASONRIES = [{
     abstract: 'TEROR is very danger with nuclear here. For the security',
     images: [{
         caption: 'image here',
-        path: 'assets/images/umaru.jpg',
+        path: 'assets/images/umaru.webp',
     }]
 }, {
     title: 'DEMO',
@@ -386,6 +386,6 @@ export const MASONRIES = [{
     abstract: 'TEROR is very danger with nuclear here. For the security',
     images: [{
         caption: 'image here',
-        path: 'assets/images/umaru.jpg',
+        path: 'assets/images/umaru.webp',
     }]
 }];

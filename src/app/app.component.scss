@@ -36,19 +36,22 @@ $counterBg: #222;
     margin: 20px;
     display: flex;
     flex-flow: row nowrap;
+    @include desktop_screen{
+        margin: 20px 20%;
+    }
 }
 
 .marsonry>.col {
     margin: 0 5px;
     display: flex;
     flex-flow: column nowrap;
-    @media screen and (min-width: 480px) {
+    @include mobile_screen {
         width: 100%;
     }
-    @media screen and (min-width: 768px) {
+    @include tablet_screen {
         width: 33.3%;
     }
-    @media screen and (min-width: 1080px) {
+    @include desktop_screen {
         width: 20%;
     }
 }

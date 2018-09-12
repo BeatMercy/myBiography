@@ -27,7 +27,7 @@ import { ScreenService } from './service/screen.service';
  * Blog main page
  */
 export class AppComponent implements OnInit {
-  title = 'app';
+  title = 'BM';
   color: ThemePalette;
   titleState = '';
   masonries = MASONRIES;
@@ -62,10 +62,9 @@ export class AppComponent implements OnInit {
         }
       }
       this.screenService.defaultScreenLevelSubscribe();
-      console.log(`Now the screen Level :${x}, require column: ${this.requireColumn}`);
     },
-    error: err => console.error('Observer got an error: ' + err),
-    complete: () => console.log('Observer got a complete notification'),
+    error: err => console.error('Resize screen got an error: ' + err),
+    complete: () => console.log('Resize screen got a complete notification'),
   };
 
   constructor(private screenService: ScreenService) {
@@ -78,7 +77,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.screenLevel$ = this.screenService.screenLevel$;
-    this.screenLevel$.pipe(debounceTime(200)).subscribe(this.resizeMarsonryObserver);
+    this.screenLevel$.pipe(distinctUntilChanged(), debounceTime(200)).subscribe(this.resizeMarsonryObserver);
   }
   toggleTitleState() {
     this.titleState === 'active' ? this.titleState = '' : this.titleState = 'active';
