@@ -37,11 +37,17 @@ import {
   MatTooltipModule,
 } from '@angular/material';
 import { AppComponent } from './app.component';
-import { ScreenService } from './service/screen.service';
+import { ScreenService } from './app-service/screen.service';
+import { BlogPageComponent } from './blog-page/blog-page.component';
+import { AppRoutingModule } from './app-routing.module';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { SquareComponent } from './square/square.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    BlogPageComponent,
+    SquareComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,8 +84,14 @@ import { ScreenService } from './service/screen.service';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
+
+    AppRoutingModule
   ],
-  providers: [
+  providers: [{
+    // 路由方式：/#/xxx
+    provide: LocationStrategy,
+    useClass: HashLocationStrategy
+  },
     ScreenService
   ],
   bootstrap: [AppComponent]

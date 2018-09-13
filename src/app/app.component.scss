@@ -3,80 +3,12 @@
     @include animation(showUp, .3s, ease-in, 0s, 1);
 }
 
-@mixin grid-auto-rows($min, $max) {
-    -ms-grid-auto-rows: minmax($min, $max);
-    grid-auto-rows: minmax($min, $max);
-}
-
-@mixin grid-auto-flow($policy) {
-    -ms-grid-auto-flow: $policy;
-    grid-auto-flow: $policy;
-}
-
-@mixin grid-auto-columns($min, $max) {
-    -ms-grid-auto-columns: minmax($min, $max);
-    grid-auto-columns: minmax($min, $max);
-}
-
-$bg: #4F000B;
-$itemBg1: #720026;
-$itemBg2: #CE4257;
-$itemBg3: #FFC093;
-$itemBg4: #FF7F51;
-$counterBg: #222;
-@mixin setColorAndHover($baseColor) {
-    color: $baseColor;
+.mainbar {
+    color: black;
+    background: white;
+    transition: all 400ms ease-in;
     &:hover {
-        background: lighten($baseColor, 20%);
+        background: rgb(209, 209, 209);
     }
 }
 
-.marsonry {
-    min-width: 200px;
-    margin: 20px;
-    display: flex;
-    flex-flow: row nowrap;
-    @include desktop_screen{
-        margin: 20px 20%;
-    }
-}
-
-.marsonry>.col {
-    margin: 0 5px;
-    display: flex;
-    flex-flow: column nowrap;
-    @include mobile_screen {
-        width: 100%;
-    }
-    @include tablet_screen {
-        width: 33.3%;
-    }
-    @include desktop_screen {
-        width: 20%;
-    }
-}
-
-.marsonry>.col>.item {
-    transition: .2s ease-in;
-    @include setColorAndHover($itemBg1);
-    &>.thumbnail {
-        padding: 5px;
-        text-align: center;
-    }
-    &>.thumbnail>img {
-        max-width: 100%;
-        margin: 0 auto;
-    }
-    & .tags_area {
-        display: flex;
-        flex-flow: row wrap;
-    }
-    & .tags_area>a {
-        text-decoration: none;
-        color: white;
-        border-radius: 5px;
-        background-color: #FF7F51;
-        margin: 0 4px 4px 0;
-        padding: 5px;
-    }
-}

@@ -1,3 +1,17 @@
+/* 
+Dark blue (0, 77, 157) = #00008b,
+Moderate blue (63, 81, 181) = #3f51b5
+Light pink 255, 64, 129 = #ff4081
+Strong pink. (205, 0, 77) = #cd004d
+most pure cyan (0, 255, 208) = #00ffd0;
+dark cyan (0, 139, 139) = #008b8b
+
+《colors》 album theme color
+Pure (or mostly pure) red. (255, 51, 0) = #f60 
+mostly pure blue (0, 51, 255) = #0e76cc,
+yellow (255, 255, 0) = #ffff00
+*/
+
 @mixin desktop_screen {
     @media screen and (min-width: 1080px) {
         @content;
@@ -25,6 +39,21 @@
 @mixin display_flex {
     display: flex;
     display: -webkit-flex;
+}
+
+@mixin grid-auto-rows($min, $max) {
+    -ms-grid-auto-rows: minmax($min, $max);
+    grid-auto-rows: minmax($min, $max);
+}
+
+@mixin grid-auto-flow($policy) {
+    -ms-grid-auto-flow: $policy;
+    grid-auto-flow: $policy;
+}
+
+@mixin grid-auto-columns($min, $max) {
+    -ms-grid-auto-columns: minmax($min, $max);
+    grid-auto-columns: minmax($min, $max);
 }
 
 /* animation.scss */
