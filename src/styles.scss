@@ -1,5 +1,16 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 @import 'github-markdown-css/github-markdown.css';
+@import 'definition.scss';
 /* mardown style file */
 
-
+.content-wrap {
+    @include mobile_screen {
+        margin: 5px 5%;
+    }
+    @include tablet_screen {
+        margin: 10px 10%;
+    }
+    @include desktop_screen {
+        margin: 20px 20%;
+    }
+}

@@ -56,6 +56,13 @@ yellow (255, 255, 0) = #ffff00
     grid-auto-columns: minmax($min, $max);
 }
 
+@mixin lightenBgOnHover($baseColor) {
+    background-color: $baseColor;
+    &:hover {
+        background: lighten($baseColor, 20%);
+    }
+}
+
 /* animation.scss */
 
 @mixin animation($name, $duration, $function: ease, $delay: 0s, $count: infinite) {

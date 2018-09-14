@@ -1,6 +1,14 @@
 <div class="container">
-    <mat-toolbar class="mainbar" [@titleState]='this.titleState' >
-        <img src="assets/images/colors-font256.webp" width="64px" alt="">
+    <div class="sidebar">
+        <div class="color-col orange"></div>
+        <div class="color-col yellow"></div>
+        <div class="color-col blue"></div>
+    </div>
+
+    <mat-toolbar class="mainbar" [@titleState]='this.titleState'>
+        <a routerLink="/">
+            <img src="assets/images/colors-font256.webp" width="64px" alt="">
+        </a>
     </mat-toolbar>
 
     <router-outlet></router-outlet>

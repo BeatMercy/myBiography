@@ -42,6 +42,7 @@ import { BlogPageComponent } from './blog-page/blog-page.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { SquareComponent } from './square/square.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,8 @@ import { SquareComponent } from './square/square.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+
     BrowserAnimationsModule,
     MatAutocompleteModule,
     MatButtonModule,

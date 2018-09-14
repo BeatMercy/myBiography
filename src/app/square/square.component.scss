@@ -29,12 +29,7 @@ $itemBg2: #CE4257;
 $itemBg3: #FFC093;
 $itemBg4: #FF7F51;
 $counterBg: #222;
-@mixin setColorAndHover($baseColor) {
-    color: $baseColor;
-    &:hover {
-        background: lighten($baseColor, 20%);
-    }
-}
+
 
 .marsonry>.col {
     margin: 0 5px;

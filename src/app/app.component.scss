@@ -12,3 +12,38 @@
     }
 }
 
+.sidebar {
+    position: fixed;
+    height: 100vh;
+    z-index: 99;
+    &>.color-col:nth-child(1) {
+        float: left;
+    }
+}
+
+.sidebar>.color-col {
+    height: 100%;
+    width: 40px;
+    transition: .2s ease-in;
+    &:hover{
+        width: 90px;
+    }
+    &.blue {
+        background-color: #0e76cc;
+        &:hover {
+            background-color: #004fd8;
+        }
+    }
+    &.yellow {
+        background-color: #ffff00;
+        &:hover {
+            background-color: #f5e137;
+        }
+    }
+    &.orange {
+        background-color: #f60;
+        &:hover {
+            background-color: #ff2c00;
+        }
+    }
+}
