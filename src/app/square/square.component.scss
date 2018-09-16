@@ -18,9 +18,6 @@ $counterBg: #222;
     margin: 20px;
     display: flex;
     flex-flow: row nowrap;
-    @include desktop_screen {
-        margin: 20px 20%;
-    }
 }
 
 $bg: #4F000B;
@@ -35,13 +32,13 @@ $counterBg: #222;
     margin: 0 5px;
     display: flex;
     flex-flow: column nowrap;
-    @include mobile_screen {
+    @include mobile-screen {
         width: 100%;
     }
-    @include tablet_screen {
+    @include tablet-screen {
         width: 33.3%;
     }
-    @include desktop_screen {
+    @include desktop-screen {
         width: 20%;
     }
 }

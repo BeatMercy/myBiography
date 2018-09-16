@@ -1,49 +1,94 @@
 @import '../definition.scss';
 .container {
     @include animation(showUp, .3s, ease-in, 0s, 1);
+   
 }
 
 .mainbar {
+    padding: 0;
     color: black;
     background: white;
     transition: all 400ms ease-in;
+    box-shadow: 1px 1px 8px #a2a2a2;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
     &:hover {
         background: rgb(209, 209, 209);
     }
 }
 
+.mainbar>.top-sidebar {
+    display: flex;
+    position: relative;
+    height: 100%;
+    @include mobile-screen {
+        width: 50px;
+    }
+    @include tablet-screen {
+        width: 80px;
+    }
+    @include desktop-screen {
+        width: 120px;
+    }
+}
+
+.top-sidebar>.color-col {
+    height: 100%;
+    transition: .2s;
+    width: 50px;
+    background-blend-mode: multiply;
+    &.orange {
+        &:hover {
+            background-color: #f60;
+        }
+    }
+    &.yellow {
+        // margin-left: 33.3%;
+        &:hover {
+            background-color: #ffff00;
+        }
+    }
+    &.blue {
+        // margin-left: 63.3%;
+        &:hover {
+            background-color: #0e76cc;
+        }
+    }
+}
+
 .sidebar {
     position: fixed;
+    display: flex;
     height: 100vh;
-    z-index: 99;
-    &>.color-col:nth-child(1) {
-        float: left;
+    z-index: 1;
+    mix-blend-mode: multiply;
+    background-blend-mode: multiply;
+    @include mobile-screen {
+        width: 50px;
+    }
+    @include tablet-screen {
+        width: 80px;
+    }
+    @include desktop-screen {
+        width: 120px;
     }
 }
 
 .sidebar>.color-col {
     height: 100%;
-    width: 40px;
-    transition: .2s ease-in;
-    &:hover{
-        width: 90px;
-    }
-    &.blue {
-        background-color: #0e76cc;
-        &:hover {
-            background-color: #004fd8;
-        }
-    }
-    &.yellow {
-        background-color: #ffff00;
-        &:hover {
-            background-color: #f5e137;
-        }
-    }
+    transition: .2s;
+    background-blend-mode: multiply;
     &.orange {
         background-color: #f60;
-        &:hover {
-            background-color: #ff2c00;
-        }
+    }
+    &.yellow {
+        // margin-left: 33.3%;
+        background-color: #ffff00;
+    }
+    &.blue {
+        // margin-left: 63.3%;
+        background-color: #0e76cc;
     }
 }

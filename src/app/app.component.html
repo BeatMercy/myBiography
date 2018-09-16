@@ -1,15 +1,26 @@
-<div class="container">
-    <div class="sidebar">
-        <div class="color-col orange"></div>
-        <div class="color-col yellow"></div>
-        <div class="color-col blue"></div>
-    </div>
-
-    <mat-toolbar class="mainbar" [@titleState]='this.titleState'>
+<div class="container" style="margin-top:64px;">
+    <mat-toolbar class="mainbar">
+        <div class="top-sidebar">
+            <div (click)="changePresentColor(this.LEFTCOLOR)" class="color-col orange">
+            </div>
+            <div (click)="changePresentColor(this.MIDCOLOR)" class="color-col yellow">
+            </div>
+            <div (click)="changePresentColor(this.RIGHTCOLOR)" class="color-col blue">
+            </div>
+        </div>
         <a routerLink="/">
             <img src="assets/images/colors-font256.webp" width="64px" alt="">
         </a>
     </mat-toolbar>
-
-    <router-outlet></router-outlet>
+    
+    <div class="sidebar">
+        <div [@sideExpand]="leftColorState"  class="color-col orange">
+        </div>
+        <div [@sideExpand]="midColorState"  class="color-col yellow">
+        </div>
+        <div [@sideExpand]="rightColorState"  class="color-col blue">
+        </div>
+    </div>
+    <!-- router content out let -->
+    <router-outlet style="z-index:1;"></router-outlet>
 </div>

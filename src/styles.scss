@@ -3,14 +3,27 @@
 @import 'definition.scss';
 /* mardown style file */
 
+body>.bg {
+    background: url('assets/images/bg.webp') #fff;
+    background-size: 1800px;
+    width: 300%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
 .content-wrap {
     @include mobile_screen {
-        margin: 5px 5%;
+        margin: 64px 5% 0 5%;
     }
     @include tablet_screen {
-        margin: 10px 10%;
+        margin: 64px 10% 0 10%;
     }
     @include desktop_screen {
-        margin: 20px 20%;
+        margin: 64px 20% 0 20%;
     }
 }

@@ -12,19 +12,19 @@ mostly pure blue (0, 51, 255) = #0e76cc,
 yellow (255, 255, 0) = #ffff00
 */
 
-@mixin desktop_screen {
+@mixin desktop-screen {
     @media screen and (min-width: 1080px) {
         @content;
     }
 }
 
-@mixin tablet_screen {
+@mixin tablet-screen {
     @media screen and (min-width: 768px) {
         @content;
     }
 }
 
-@mixin mobile_screen {
+@mixin mobile-screen {
     @media screen and (min-width: 480px) {
         @content;
     }
