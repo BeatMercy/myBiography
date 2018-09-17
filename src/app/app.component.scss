@@ -1,7 +1,10 @@
 @import '../definition.scss';
 .container {
     @include animation(showUp, .3s, ease-in, 0s, 1);
-   
+    margin-top:56px;
+    @include desktop-screen{
+        margin-top: 64px;
+    }
 }
 
 .mainbar {
@@ -9,13 +12,11 @@
     color: black;
     background: white;
     transition: all 400ms ease-in;
-    box-shadow: 1px 1px 8px #a2a2a2;
     position: fixed;
     z-index: 2;
     top: 0;
     left: 0;
     &:hover {
-        background: rgb(209, 209, 209);
     }
 }
 
@@ -39,6 +40,12 @@
     transition: .2s;
     width: 50px;
     background-blend-mode: multiply;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    &>.menu-icon{
+        align-self: center;
+    }
     &.orange {
         &:hover {
             background-color: #f60;

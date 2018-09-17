@@ -11,7 +11,7 @@ export class ScreenService {
         this.screenLevel$.subscribe();
     }, 100);
     constructor(media: MediaMatcher) {
-        this.tabletScreen = media.matchMedia('screen and (max-width:768px)');
+        this.tabletScreen = media.matchMedia('screen and  (min-width: 480px) and (max-width: 768px)');
         this.mobileScreen = media.matchMedia('screen and (max-width:480px)');
         this.mobileScreen.addListener((next) => {
             if (!this.tabletScreen.matches && !next.matches) {
