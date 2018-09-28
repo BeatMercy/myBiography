@@ -1,4 +1,5 @@
 @import '../../definition.scss';
+@include router-page-show;
 
 $bg: #4F000B;
 $itemBg1: #720026;
@@ -26,8 +27,6 @@ $itemBg2: #CE4257;
 $itemBg3: #FFC093;
 $itemBg4: #FF7F51;
 $counterBg: #222;
-
-
 .marsonry>.col {
     margin: 0 5px;
     display: flex;

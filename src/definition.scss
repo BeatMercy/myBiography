@@ -92,6 +92,11 @@ yellow (255, 255, 0) = #ffff00
         @content;
     }
 }
+@mixin router-page-show {
+    :host {
+        animation: showUp 1s ease-in;
+    }
+}
 
 @include keyframes(showUp) {
     from {

@@ -40,9 +40,10 @@ import { AppComponent } from './app.component';
 import { ScreenService } from './app-service/screen.service';
 import { BlogPageComponent } from './blog-page/blog-page.component';
 import { AppRoutingModule } from './app-routing.module';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { LocationStrategy, HashLocationStrategy, PathLocationStrategy } from '@angular/common';
 import { SquareComponent } from './square/square.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -88,10 +89,12 @@ import { HttpClientModule } from '@angular/common/http';
     MatToolbarModule,
     MatTooltipModule,
 
+    ScrollDispatchModule,
+
     AppRoutingModule
   ],
   providers: [{
-    // 路由方式：/#/xxx
+    // 路由方式：/#/xxx LocationStrategy
     provide: LocationStrategy,
     useClass: HashLocationStrategy
   },

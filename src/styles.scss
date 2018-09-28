@@ -1,9 +1,9 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
-@import 'github-markdown-css/github-markdown.css';
 @import 'definition.scss';
 /* mardown style file */
-
+html{scroll-behavior: smooth;}
 body>.bg {
+    animation: showUp 0.3s ease-in;
     background: url('assets/images/bg.webp') #fff;
     background-size: 1800px;
     width: 300%;
