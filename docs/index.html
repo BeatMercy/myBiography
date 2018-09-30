@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-cn">
 
 <head>
   <meta charset="utf-8">
@@ -8,96 +8,100 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="stylesheet" href="styles.245b2a513ab0724e7c7d.css"></head>
+<link rel="stylesheet" href="styles.3f53501a1009b325b9cd.css"></head>
 
 <body style="margin:0;">
+  <style>
+    @keyframes loaded {
+      0% {
+        width: 0;
+        height: 100%;
+      }
+  
+      50% {
+        height: 100%;
+        opacity: 1;
+        width: 500%
+      }
+  
+      100% {
+        width: 0;
+        height: 100%;
+        left: 500%;
+      }
+    }
+  
+    @keyframes loaded_wrap {
+      0% {
+        width: 0;
+        height: 100%;
+        opacity: 1;
+        transform: skew(-45deg)
+      }
+  
+      50% {
+        height: 100%;
+        opacity: 1;
+        width: 500%
+      }
+  
+      100% {
+        width: 0;
+        height: 100%;
+        opacity: 0;
+        left: 500%;
+      }
+    }
+  
+    .loader.is-loaded,
+    .loader.is-loaded::after,
+    .loader.is-loaded::before {
+      animation-duration: 1s;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
+      animation-iteration-count: 1;
+      top: 0;
+      left: 0;
+      display: block
+    }
+  
+    .loader.is-loaded {
+      position: fixed;
+      z-index: 101;
+      transform: skew(-45deg);
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #f60;
+      animation-name: loaded_wrap;
+      transform-origin: top left;
+      animation-delay: 0s;
+      mix-blend-mode: multiply;
+      background-blend-mode: multiply;
+    }
+  
+    .loader.is-loaded::after,
+    .loader.is-loaded::before {
+      content: '';
+      position: absolute;
+      animation-name: loaded;
+      transform-origin: top left;
+    }
+  
+    .loader.is-loaded::before {
+      background-color: #ff0;
+  
+    }
+  
+    .loader.is-loaded::after {
+      background-color: #0e76cc;
+      animation-delay: 0.2s;
+    }
+  </style>
+  <div class="loader is-loaded"></div>
   <div class="bg"></div>
   <app-root>
-    <style>
-      @keyframes loaded {
-        0% {
-          width: 0;
-          height: 100%;
-        }
-        50% {
-          height: 100%;
-          opacity: 1;
-          width: 500%
-        }
-        100% {
-          width: 0;
-          height: 100%;
-          left: 600%;
-        }
-      }
-
-      @keyframes loaded_wrap {
-        0% {
-          width: 0;
-          height: 100%;
-          opacity: 1;
-          transform: skew(-45deg)
-        }
-        50% {
-          height: 100%;
-          opacity: 1;
-          width: 500%
-        }
-        100% {
-          width: 0;
-          height: 100%;
-          opacity: 0;
-          left: 600%;
-        }
-      }
-
-      .loader.is-loaded,
-      .loader.is-loaded::after,
-      .loader.is-loaded::before {
-        animation-duration: 1s;
-        animation-timing-function: ease-in-out;
-        animation-fill-mode: forwards;
-        animation-iteration-count: 1;
-        top: 0;
-        left: 0;
-        display: block
-      }
-
-      .loader.is-loaded {
-        position: fixed;
-        z-index: 101;
-        transform: skew(-45deg);
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-        background-color: #f60;
-        animation-name: loaded_wrap;
-        transform-origin: top left;
-        animation-delay: 0s;
-        mix-blend-mode: multiply;
-        background-blend-mode: multiply;
-      }
-
-      .loader.is-loaded::after,
-      .loader.is-loaded::before {
-        content: '';
-        position: absolute;
-        animation-name: loaded;
-        transform-origin: top left;
-      }
-
-      .loader.is-loaded::before {
-        background-color: #ff0;
-
-      }
-
-      .loader.is-loaded::after {
-        background-color: #0e76cc;
-        animation-delay: 0.2s;
-      }
-    </style>
-    <div class="loader is-loaded"></div>
   </app-root>
-<script type="text/javascript" src="runtime.a66f828dca56eeb90e02.js"></script><script type="text/javascript" src="polyfills.2f4a59095805af02bd79.js"></script><script type="text/javascript" src="main.41b1573ada4aa9d9c927.js"></script></body>
+<script type="text/javascript" src="runtime.a66f828dca56eeb90e02.js"></script><script type="text/javascript" src="polyfills.2f4a59095805af02bd79.js"></script><script type="text/javascript" src="main.eefd39a71d142ee9aae6.js"></script></body>
 
 </html>

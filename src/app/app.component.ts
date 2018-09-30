@@ -1,10 +1,5 @@
-import { Component, OnInit, ElementRef, HostListener } from '@angular/core';
-import { ThemePalette } from '@angular/material';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { of, BehaviorSubject, Observable } from 'rxjs';
-import { debounceTime, merge, delay } from 'rxjs/operators';
-import { ScrollDispatcher, CdkScrollable } from '@angular/cdk/overlay';
-import { Scroll } from '@angular/router';
 import { ViewportScroller } from '@angular/common';
 import { supportsScrollBehavior } from '@angular/cdk/platform';
 
@@ -15,13 +10,14 @@ import { supportsScrollBehavior } from '@angular/cdk/platform';
   animations: [
     trigger('expandColor', [
       state('sleep', style({
-        height: '15%'
+        height: '5px'
       })),
       state('activated', style({
-        height: '70%'
+        height: '50px',
+        'box-shadow': '0px 5px 3px grey'
       })),
-      transition('sleep => activated', animate('400ms ease-in')),
-      transition('activated => sleep', animate('400ms ease-out'))
+      transition('sleep => activated', animate('400ms 500ms ease-in')),
+      transition('activated => sleep', animate('200ms ease-out'))
     ])]
 })
 /**
@@ -59,11 +55,11 @@ export class AppComponent implements OnInit {
       case this.TECH_COLOR: this.presentColor = this.TECH_COLOR; break;
       default: this.presentColor = this.TECH_COLOR;
     }
+    this.presentState = this.ACTIVATED_STATE;
   }
 
   /**
    * 监听scroll事件
-   * @param event 
    */
   @HostListener('window:scroll', [])
   onScroll() {

@@ -9,16 +9,15 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./blog-page.component.scss']
 })
 export class BlogPageComponent implements OnInit {
-  mdPath = 'assets/md/tech/messy/start up md.md';
+  mdPath = 'assets/md/';
   mdContent: string;
   converter = new Showdown.Converter();
   constructor(private http: HttpClient, private router: ActivatedRoute) {
   }
 
   ngOnInit() {
-    const s = this.router.snapshot.paramMap.get('id');
-    console.log(s);
-
+    const blogId = this.router.snapshot.paramMap.get('id');
+    this.mdPath += `tech/messy/${blogId}.md`;
     this.http.get(this.mdPath, { responseType: 'text' })
       .subscribe(
         (next: string) => {

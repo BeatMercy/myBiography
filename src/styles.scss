@@ -18,10 +18,10 @@ body>.bg {
 
 .content-wrap {
     @include mobile_screen {
-        margin: 56px 5% 0 5%;
+        margin: 64px 5% 0 5%;
     }
     @include tablet_screen {
-        margin: 56px 10% 0 10%;
+        margin: 64px 10% 0 10%;
     }
     @include desktop_screen {
         margin: 64px 20% 0 20%;
