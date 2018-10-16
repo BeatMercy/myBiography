@@ -1,18 +1,18 @@
 <div class="nav-top">
+    <div [@switcher]="this.presentState" class="nav-switcher">
+        <div (click)="previous()" class="tri tri-up"></div>
+        <div (click)="next()" class="tri tri-down"></div>
+    </div>
     <div [@expandColor]="getExpandColor(this.FOO_COLOR)" class="color-row orange">
-        <div (click)="changePresentColor(this.FOO_COLOR)" class="color-col orange">
-            <img class="menu-icon" src="assets/images/smile.webp" width="30px" alt="">
-        </div>
+
     </div>
     <div [@expandColor]="getExpandColor(this.VISION_COLOR)" class="color-row yellow">
-        <div (click)="changePresentColor(this.VISION_COLOR)" class="color-col yellow">
-            <img class="menu-icon" src="assets/images/smile.webp" width="30px" alt="">
-        </div>
+
     </div>
     <div [@expandColor]="getExpandColor(this.TECH_COLOR)" class="color-row blue">
-        <div (click)="changePresentColor(this.TECH_COLOR)" class="color-col blue">
+        <!-- <div (click)="changePresentColor(this.TECH_COLOR)" class="color-col blue">
             <img class="menu-icon" src="assets/images/smile.webp" width="30px" alt="">
-        </div>
+        </div> -->
     </div>
 </div>
 

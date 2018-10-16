@@ -14,10 +14,26 @@ import { supportsScrollBehavior } from '@angular/cdk/platform';
       })),
       state('activated', style({
         height: '50px',
-        'box-shadow': '0px 5px 3px grey'
+        'box-shadow': 'rgba(58, 58, 58, 0.41) 0px 3px 12px 0px'
       })),
-      transition('sleep => activated', animate('400ms 500ms ease-in')),
-      transition('activated => sleep', animate('200ms ease-out'))
+      state('await', style({
+        height: '50px',
+        'box-shadow': 'rgba(58, 58, 58, 0.41) 0px 3px 12px 0px'
+      })),
+      transition('await => activated', animate('400ms 500ms ease-in')),
+      transition('sleep => activated', animate('400ms ease-in')),
+      transition('activated => *', animate('200ms ease-out'))
+    ]),
+    trigger('switcher', [
+      state('sleep', style({
+        display: 'none'
+      })),
+      state('actived', style({
+        display: 'flex'
+      })
+      ),
+      transition('sleep => activated', animate('400ms ease-in')),
+      transition('activated => *', animate('200ms ease-out'))
     ])]
 })
 /**
@@ -25,6 +41,7 @@ import { supportsScrollBehavior } from '@angular/cdk/platform';
  */
 export class AppComponent implements OnInit {
   ACTIVATED_STATE = 'activated';
+  AWAIT_STATE = 'await';
   SLEEP_STATE = 'sleep';
 
   FOO_COLOR = '#f60';
@@ -64,14 +81,15 @@ export class AppComponent implements OnInit {
   @HostListener('window:scroll', [])
   onScroll() {
     const presentYPos = this.scroll.getScrollPosition()[1];
-    if (presentYPos > this.previousYPos && presentYPos > 60) {
+    const posDiff = presentYPos - this.previousYPos;
+    this.previousYPos = presentYPos;
+    if (posDiff > 10 || presentYPos > 60) {
       // 下滑 swip down
       this.presentState = this.SLEEP_STATE;
-    } else {
+    } else if (posDiff < -40 || presentYPos <= 60) {
       // 上划 swip up
-      this.presentState = this.ACTIVATED_STATE;
+      this.presentState = this.AWAIT_STATE;
     }
-    this.previousYPos = presentYPos;
   }
 
   getExpandColor(name: string): string {
@@ -83,6 +101,33 @@ export class AppComponent implements OnInit {
       case this.FOO_COLOR:
         return this.presentColor === this.FOO_COLOR ? this.presentState : this.SLEEP_STATE;
       default: return this.SLEEP_STATE;
+    }
+  }
+  previous(): void {
+    switch (this.presentColor) {
+      case this.TECH_COLOR:
+        this.changePresentColor(this.VISION_COLOR);
+        break;
+      case this.VISION_COLOR:
+        this.changePresentColor( this.FOO_COLOR);
+        break;
+      case this.FOO_COLOR:
+        this.changePresentColor(this.TECH_COLOR);
+        break;
+    }
+  }
+
+  next(): void {
+    switch (this.presentColor) {
+      case this.TECH_COLOR:
+        this.changePresentColor(this.FOO_COLOR);
+        break;
+      case this.VISION_COLOR:
+        this.changePresentColor(this.TECH_COLOR);
+        break;
+      case this.FOO_COLOR:
+        this.changePresentColor(this.VISION_COLOR);
+        break;
     }
   }
 

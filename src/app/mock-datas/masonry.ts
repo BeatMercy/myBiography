@@ -31,7 +31,7 @@ export const MASONRIES = [{
         path: 'assets/images/n15.jpg',
     }]
 }, {
-    id: 2,
+    id: 3,
     title: 'DEMO',
     subtitle: 'this is a subtitle',
     tags: [{
@@ -47,7 +47,7 @@ export const MASONRIES = [{
         path: 'assets/images/768x1280.webp',
     }]
 }, {
-    id: 2,
+    id: 3,
     title: 'DEMO',
     subtitle: 'this is a subtitle',
     tags: [{
@@ -63,7 +63,7 @@ export const MASONRIES = [{
         path: 'assets/images/umaru.webp',
     }]
 }, {
-    id: 2,
+    id: 3,
     title: 'DEMO',
     subtitle: 'this is a subtitle',
     tags: [{
