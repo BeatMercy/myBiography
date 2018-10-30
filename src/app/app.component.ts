@@ -83,10 +83,10 @@ export class AppComponent implements OnInit {
     const presentYPos = this.scroll.getScrollPosition()[1];
     const posDiff = presentYPos - this.previousYPos;
     this.previousYPos = presentYPos;
-    if (posDiff > 10 || presentYPos > 60) {
+    if (posDiff > 10 && presentYPos > 60) {
       // 下滑 swip down
       this.presentState = this.SLEEP_STATE;
-    } else if (posDiff < -40 || presentYPos <= 60) {
+    } else if (posDiff < -30 || presentYPos <= 60) {
       // 上划 swip up
       this.presentState = this.AWAIT_STATE;
     }

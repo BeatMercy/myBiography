@@ -7,6 +7,10 @@
     }
 }
 
+.content {
+    min-height: 1000px;
+}
+
 .nav-top {
     position: fixed;
     z-index: 2;
@@ -98,5 +102,27 @@
         &:hover {
             border-top-color: grey;
         }
+    }
+}
+
+.footer {
+    font-size: 14px;
+    color: white;
+    background-color: #0e77cc;
+    padding: 15px 50px;
+    .links {
+        justify-content: center;
+        display: flex;
+        ul {
+            display: flex;
+            flex-flow: row nowrap;
+            li {
+                margin: 5px;
+                list-style-type: none;
+            }
+        }
+    }
+    .copyright_text {
+        text-align: center;
     }
 }

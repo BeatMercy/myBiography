@@ -10,6 +10,7 @@ dark cyan (0, 139, 139) = #008b8b
 Pure (or mostly pure) red. (255, 51, 0) = #f60 
 mostly pure blue (0, 51, 255) = #0e76cc,
 yellow (255, 255, 0) = #ffff00
+box-shadow:0 3px 5px 0 rgba(0,1,1,.1)
 */
 
 @mixin desktop-screen {
@@ -92,6 +93,7 @@ yellow (255, 255, 0) = #ffff00
         @content;
     }
 }
+
 @mixin router-page-show {
     :host {
         animation: showUp 1s ease-in;
