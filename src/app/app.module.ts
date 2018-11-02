@@ -37,13 +37,14 @@ import {
   MatTooltipModule,
 } from '@angular/material';
 import { AppComponent } from './app.component';
-import { ScreenService } from './app-service/screen.service';
+import { ScreenService } from './service/screen.service';
 import { BlogPageComponent } from './blog-page/blog-page.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LocationStrategy, HashLocationStrategy, PathLocationStrategy } from '@angular/common';
 import { SquareComponent } from './square/square.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ScrollDispatchModule } from '@angular/cdk/scrolling';
+import { LangService } from './service/lang.service';
 
 @NgModule({
   declarations: [
@@ -98,6 +99,7 @@ import { ScrollDispatchModule } from '@angular/cdk/scrolling';
     provide: LocationStrategy,
     useClass: HashLocationStrategy
   },
+    LangService,
     ScreenService
   ],
   bootstrap: [AppComponent]

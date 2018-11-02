@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ScreenService } from '../app-service/screen.service';
+import { ScreenService } from '../service/screen.service';
 import { BehaviorSubject } from 'rxjs';
 import { MASONRIES } from '../mock-datas/masonry';
 import { distinctUntilChanged, debounceTime } from 'rxjs/operators';
