@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>MyBiography</title>
+  <title>Mercy Wu- Bio</title>
   <base href="">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,26 +11,27 @@
 </head>
 
 <body style="margin:0;">
+  <!--  openscreen animation -->
   <style>
     @keyframes loaded {
       0% {
         width: 0;
         height: 100%;
       }
-  
+
       50% {
         height: 100%;
         opacity: 1;
         width: 500%
       }
-  
+
       100% {
         width: 0;
         height: 100%;
         left: 500%;
       }
     }
-  
+
     @keyframes loaded_wrap {
       0% {
         width: 0;
@@ -38,13 +39,13 @@
         opacity: 1;
         transform: skew(-45deg)
       }
-  
+
       50% {
         height: 100%;
         opacity: 1;
         width: 500%
       }
-  
+
       100% {
         width: 0;
         height: 100%;
@@ -52,7 +53,7 @@
         left: 500%;
       }
     }
-  
+
     .loader.is-loaded,
     .loader.is-loaded::after,
     .loader.is-loaded::before {
@@ -64,7 +65,7 @@
       left: 0;
       display: block
     }
-  
+
     .loader.is-loaded {
       position: fixed;
       z-index: 101;
@@ -79,7 +80,7 @@
       mix-blend-mode: multiply;
       background-blend-mode: multiply;
     }
-  
+
     .loader.is-loaded::after,
     .loader.is-loaded::before {
       content: '';
@@ -87,16 +88,17 @@
       animation-name: loaded;
       transform-origin: top left;
     }
-  
+
     .loader.is-loaded::before {
       background-color: #ff0;
-  
+
     }
-  
+
     .loader.is-loaded::after {
       background-color: #0e76cc;
       animation-delay: 0.2s;
     }
+
   </style>
   <div class="loader is-loaded"></div>
   <div class="bg"></div>

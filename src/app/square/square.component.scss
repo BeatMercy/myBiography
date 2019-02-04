@@ -7,18 +7,37 @@ $itemBg2: #CE4257;
 $itemBg3: #FFC093;
 $itemBg4: #FF7F51;
 $counterBg: #222;
+
 @mixin setColorAndHover($baseColor) {
-    color: $baseColor;
-    &:hover {
-        background: lighten($baseColor, 20%);
-    }
+  color: $baseColor;
+
+  &:hover {
+    background: lighten($baseColor, 20%);
+  }
+}
+
+.content-wrap {
+  .bannerImg {
+    border-radius: 15px;
+    width: 100%;
+    height: 350px;
+    top: 50px;
+    left: 0;
+    position: absolute;
+    background-image: url('../../assets/images/indexBandPic.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &:before {}
+  }
 }
 
 .marsonry {
-    min-width: 200px;
-    margin: 20px;
-    display: flex;
-    flex-flow: row nowrap;
+  min-width: 200px;
+  margin: 20px;
+  display: flex;
+  flex-flow: row nowrap;
+  margin-top: 250px;
 }
 
 $bg: #4F000B;
@@ -27,42 +46,50 @@ $itemBg2: #CE4257;
 $itemBg3: #FFC093;
 $itemBg4: #FF7F51;
 $counterBg: #222;
+
 .marsonry>.col {
-    margin: 0 5px;
-    display: flex;
-    flex-flow: column nowrap;
-    @include mobile-screen {
-        width: 100%;
-    }
-    @include tablet-screen {
-        width: 33.3%;
-    }
-    @include desktop-screen {
-        width: 20%;
-    }
+  margin: 0 5px;
+  display: flex;
+  flex-flow: column nowrap;
+
+  @include mobile-screen {
+    width: 100%;
+  }
+
+  @include tablet-screen {
+    width: 33.3%;
+  }
+
+  @include desktop-screen {
+    width: 20%;
+  }
 }
 
 .marsonry>.col>.item {
-    transition: .2s ease-in;
-    @include setColorAndHover($itemBg1);
-    &>.thumbnail {
-        padding: 5px;
-        text-align: center;
-    }
-    &>.thumbnail>img {
-        max-width: 100%;
-        margin: 0 auto;
-    }
-    & .tags_area {
-        display: flex;
-        flex-flow: row wrap;
-    }
-    & .tags_area>a {
-        text-decoration: none;
-        color: white;
-        border-radius: 5px;
-        background-color: #FF7F51;
-        margin: 0 4px 4px 0;
-        padding: 5px;
-    }
+  transition: .2s ease-in;
+  @include setColorAndHover($itemBg1);
+
+  &>.thumbnail {
+    padding: 5px;
+    text-align: center;
+  }
+
+  &>.thumbnail>img {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  & .tags_area {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  & .tags_area>a {
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    background-color: #FF7F51;
+    margin: 0 4px 4px 0;
+    padding: 5px;
+  }
 }

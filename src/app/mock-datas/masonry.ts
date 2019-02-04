@@ -414,4 +414,4 @@ export const MASONRIES = [{
         caption: 'image here',
         path: 'assets/images/umaru.webp',
     }]
-}];
+}]

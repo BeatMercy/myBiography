@@ -1,25 +1,25 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { BlogPageComponent } from './blog-page.component';
+import { BlogPageComponent } from './blog-page.component'
 
 describe('BlogPageComponent', () => {
-  let component: BlogPageComponent;
-  let fixture: ComponentFixture<BlogPageComponent>;
+  let component: BlogPageComponent
+  let fixture: ComponentFixture<BlogPageComponent>
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ BlogPageComponent ]
     })
-    .compileComponents();
-  }));
+    .compileComponents()
+  }))
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BlogPageComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    fixture = TestBed.createComponent(BlogPageComponent)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+  })
 
   it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    expect(component).toBeTruthy()
+  })
+})

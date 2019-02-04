@@ -1,47 +1,47 @@
 <div class="nav-top">
-    <div [@switcher]="this.presentState" class="nav-switcher">
-        <div (click)="previous()" class="tri tri-up"></div>
-        <div (click)="next()" class="tri tri-down"></div>
-    </div>
-    <div [@expandColor]="getExpandColor(this.FOO_COLOR)" class="color-row orange">
+  <div [@switcher]="this.presentState" class="nav-switcher">
+    <div (click)="previous()" class="tri tri-up"></div>
+    <div (click)="next()" class="tri tri-down"></div>
+  </div>
+  <div [@expandColor]="getExpandColor(this.FOO_COLOR)" class="color-row orange">
 
-    </div>
-    <div [@expandColor]="getExpandColor(this.VISION_COLOR)" class="color-row yellow">
+  </div>
+  <div [@expandColor]="getExpandColor(this.VISION_COLOR)" class="color-row yellow">
 
-    </div>
-    <div [@expandColor]="getExpandColor(this.TECH_COLOR)" class="color-row blue">
-        <!-- <div (click)="changePresentColor(this.TECH_COLOR)" class="color-col blue">
+  </div>
+  <div [@expandColor]="getExpandColor(this.TECH_COLOR)" class="color-row blue">
+    <!-- <div (click)="changePresentColor(this.TECH_COLOR)" class="color-col blue">
             <img class="menu-icon" src="assets/images/smile.webp" width="30px" alt="">
         </div> -->
-    </div>
+  </div>
 </div>
 
 <div class="container content">
-    <!-- router content out let -->
-    <router-outlet class="" style="z-index:1;"></router-outlet>
+  <!-- router content out let -->
+  <router-outlet class="" style="z-index:1;"></router-outlet>
 </div>
 
 <div class="footer">
-    <div class="links">
-        <!-- 我的链接 -->
-        <ul>
-            <li>Git Hub Page</li>
-            <li>Twitter me</li>
-            <li>Instagram me</li>
-        </ul>
-        <!-- 参考文献 -->
-        <ul>
-            <li>Git Hub Page</li>
-            <li>Twitter me</li>
-            <li>Instagram me</li>
-        </ul>
-        <!-- 友情连接 -->
-        <ul>
-            <li>Git Hub Page</li>
-            <li>Twitter me</li>
-            <li>Instagram me</li>
-        </ul>
-    </div>
-    <p class="copyright_text">COPYRIGHT © 2018 – 2019 BEATMERCY. ALL RIGHTS RESERVED.</p>
-    <p class="copyright_text">贝特梅斯个人所有</p>
+  <div class="links">
+    <!-- 我的链接 -->
+    <ul>
+      <li>Git Hub Page</li>
+      <li>Twitter me</li>
+      <li>Instagram me</li>
+    </ul>
+    <!-- 参考文献 -->
+    <ul>
+      <li>Git Hub Page</li>
+      <li>Twitter me</li>
+      <li>Instagram me</li>
+    </ul>
+    <!-- 友情连接 -->
+    <ul>
+      <li>Git Hub Page</li>
+      <li>Twitter me</li>
+      <li>Instagram me</li>
+    </ul>
+  </div>
+  <p class="copyright_text">COPYRIGHT © 2018 – 2019 BEATMERCY. ALL RIGHTS RESERVED.</p>
+  <p class="copyright_text">贝特梅斯个人所有</p>
 </div>

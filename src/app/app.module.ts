@@ -1,6 +1,6 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule, } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser'
+import { BrowserAnimationsModule, } from '@angular/platform-browser/animations'
+import { NgModule } from '@angular/core'
 
 import {
   MatAutocompleteModule,
@@ -35,17 +35,16 @@ import {
   MatTabsModule,
   MatToolbarModule,
   MatTooltipModule,
-} from '@angular/material';
-import { AppComponent } from './app.component';
-import { ScreenService } from './service/screen.service';
-import { BlogPageComponent } from './blog-page/blog-page.component';
-import { AppRoutingModule } from './app-routing.module';
-import { LocationStrategy, HashLocationStrategy, PathLocationStrategy } from '@angular/common';
-import { SquareComponent } from './square/square.component';
-import { HttpClientModule } from '@angular/common/http';
-import { ScrollDispatchModule } from '@angular/cdk/scrolling';
-import { LangService } from './service/lang.service';
-
+} from '@angular/material'
+import { AppComponent } from './app.component'
+import { ScreenService } from './service/screen.service'
+import { BlogPageComponent } from './blog-page/blog-page.component'
+import { AppRoutingModule } from './app-routing.module'
+import { LocationStrategy, HashLocationStrategy, PathLocationStrategy } from '@angular/common'
+import { SquareComponent } from './square/square.component'
+import { ScrollDispatchModule } from '@angular/cdk/scrolling'
+import { HttpClientModule } from '@angular/common/http'
+import { LangService } from './service/lang.service'
 @NgModule({
   declarations: [
     AppComponent,
@@ -83,13 +82,13 @@ import { LangService } from './service/lang.service';
     MatSliderModule,
     MatSlideToggleModule,
     MatSnackBarModule,
-    MatSortModule,
     MatStepperModule,
     MatTableModule,
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
 
+    MatSortModule,
     ScrollDispatchModule,
 
     AppRoutingModule

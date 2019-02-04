@@ -1,128 +1,148 @@
 @import '../definition.scss';
+
 .container {
-    @include animation(showUp, .3s, ease-in, 0s, 1);
-    margin-top: 56px;
-    @include desktop-screen {
-        margin-top: 64px;
-    }
+  @include animation(showUp, .3s, ease-in, 0s, 1);
+  margin-top: 56px;
+
+  @include desktop-screen {
+    margin-top: 64px;
+  }
 }
 
 .content {
-    min-height: 1000px;
+  min-height: 1000px;
 }
 
 .nav-top {
-    position: fixed;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    display: flex;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  display: flex;
 }
 
 .color-row>.color-col {
-    height: 100%;
-    transition: .2s;
-    background-blend-mode: multiply;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    &>.menu-icon {
-        align-self: center;
+  height: 100%;
+  transition: .2s;
+  background-blend-mode: multiply;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+  &>.menu-icon {
+    align-self: center;
+  }
+
+  &.orange {
+    &:hover {
+      background-color: #f60;
     }
-    &.orange {
-        &:hover {
-            background-color: #f60;
-        }
+  }
+
+  &.yellow {
+
+    // margin-left: 33.3%;
+    &:hover {
+      background-color: #ffff00;
     }
-    &.yellow {
-        // margin-left: 33.3%;
-        &:hover {
-            background-color: #ffff00;
-        }
+  }
+
+  &.blue {
+
+    // margin-left: 63.3%;
+    &:hover {
+      background-color: #0e76cc;
     }
-    &.blue {
-        // margin-left: 63.3%;
-        &:hover {
-            background-color: #0e76cc;
-        }
-    }
+  }
 }
 
 .nav-top {
-    width: 100%;
-    display: flex;
-    flex-flow: column nowrap;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 .nav-top>.color-row {
-    position: absolute;
-    width: 100%;
-    transition: .2s;
-    background-blend-mode: multiply;
-    &.orange {
-        background-color: #f60;
-    }
-    &.yellow {
-        margin-top: 5px;
-        background-color: #ffff00;
-    }
-    &.blue {
-        margin-top: 10px;
-        background-color: #0e76cc;
-    }
+  position: absolute;
+  width: 100%;
+  transition: .2s;
+  background-blend-mode: multiply;
+
+  &.orange {
+    background-color: #f60;
+  }
+
+  &.yellow {
+    margin-top: 5px;
+    background-color: #ffff00;
+  }
+
+  &.blue {
+    margin-top: 10px;
+    background-color: #0e76cc;
+  }
 }
 
 .nav-switcher {
-    margin-top: 15px;
-    position: absolute;
-    display: flex;
-    flex-flow: column nowrap;
-    z-index: 2;
-    .tri {
-        transition: border-color 0.2s ease-in;
-        margin: 5px;
-        margin-left: 10px;
+  margin-top: 15px;
+  position: absolute;
+  display: flex;
+  flex-flow: column nowrap;
+  z-index: 2;
+
+  .tri {
+    transition: border-color 0.2s ease-in;
+    margin: 5px;
+    margin-left: 10px;
+  }
+
+  .tri-up {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
+
+    &:hover {
+      border-bottom-color: grey;
     }
-    .tri-up {
-        width: 0;
-        height: 0;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-bottom: 10px solid white;
-        &:hover {
-            border-bottom-color: grey;
-        }
+  }
+
+  .tri-down {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid white;
+
+    &:hover {
+      border-top-color: grey;
     }
-    .tri-down {
-        width: 0;
-        height: 0;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-top: 10px solid white;
-        &:hover {
-            border-top-color: grey;
-        }
-    }
+  }
 }
 
 .footer {
-    font-size: 14px;
-    color: white;
-    background-color: #0e77cc;
-    padding: 15px 50px;
-    .links {
-        justify-content: center;
-        display: flex;
-        ul {
-            display: flex;
-            flex-flow: row nowrap;
-            li {
-                margin: 5px;
-                list-style-type: none;
-            }
-        }
+  font-size: 14px;
+  color: white;
+  background-color: #0e77cc;
+  padding: 15px 50px;
+
+  .links {
+    justify-content: center;
+    display: flex;
+
+    ul {
+      display: flex;
+      flex-flow: row nowrap;
+
+      li {
+        margin: 5px;
+        list-style-type: none;
+      }
     }
-    .copyright_text {
-        text-align: center;
-    }
+  }
+
+  .copyright_text {
+    text-align: center;
+  }
 }

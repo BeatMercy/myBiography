@@ -14,97 +14,103 @@ box-shadow:0 3px 5px 0 rgba(0,1,1,.1)
 */
 
 @mixin desktop-screen {
-    @media screen and (min-width: 768px) {
-        @content;
-    }
+  @media screen and (min-width: 768px) {
+    @content;
+  }
 }
 
 @mixin tablet-screen {
-    @media screen and (min-width: 480px) and (max-width: 768px) {
-        @content;
-    }
+  @media screen and (min-width: 480px) and (max-width: 768px) {
+    @content;
+  }
 }
 
 @mixin mobile-screen {
-    @media screen and (max-width: 480px) {
-        @content;
-    }
+  @media screen and (max-width: 480px) {
+    @content;
+  }
 }
 
 // Definition of common @Mixin here
 @mixin display_grid {
-    display: grid;
-    display: -ms-grid;
+  display: grid;
+  display: -ms-grid;
 }
 
 @mixin display_flex {
-    display: flex;
-    display: -webkit-flex;
+  display: flex;
+  display: -webkit-flex;
 }
 
 @mixin grid-auto-rows($min, $max) {
-    -ms-grid-auto-rows: minmax($min, $max);
-    grid-auto-rows: minmax($min, $max);
+  -ms-grid-auto-rows: minmax($min, $max);
+  grid-auto-rows: minmax($min, $max);
 }
 
 @mixin grid-auto-flow($policy) {
-    -ms-grid-auto-flow: $policy;
-    grid-auto-flow: $policy;
+  -ms-grid-auto-flow: $policy;
+  grid-auto-flow: $policy;
 }
 
 @mixin grid-auto-columns($min, $max) {
-    -ms-grid-auto-columns: minmax($min, $max);
-    grid-auto-columns: minmax($min, $max);
+  -ms-grid-auto-columns: minmax($min, $max);
+  grid-auto-columns: minmax($min, $max);
 }
 
 @mixin lightenBgOnHover($baseColor) {
-    background-color: $baseColor;
-    &:hover {
-        background: lighten($baseColor, 20%);
-    }
+  background-color: $baseColor;
+
+  &:hover {
+    background: lighten($baseColor, 20%);
+  }
 }
 
 /* animation.scss */
 
 @mixin animation($name, $duration, $function: ease, $delay: 0s, $count: infinite) {
-    -webkit-animation: $name $duration $function $delay $count;
-    -moz-animation: $name $duration $function $delay $count;
-    -ms-animation: $name $duration $function $delay $count;
-    -o-animation: $name $duration $function $delay $count;
-    animation: $name $duration $function $delay $count;
+  -webkit-animation: $name $duration $function $delay $count;
+  -moz-animation: $name $duration $function $delay $count;
+  -ms-animation: $name $duration $function $delay $count;
+  -o-animation: $name $duration $function $delay $count;
+  animation: $name $duration $function $delay $count;
 }
 
 /* keyframes.scss */
 
 @mixin keyframes($animationName) {
-    @-webkit-keyframes #{$animationName} {
-        @content;
-    }
-    @-moz-keyframes #{$animationName} {
-        @content;
-    }
-    @-ms-keyframes #{$animationName} {
-        @content;
-    }
-    @-o-keyframes #{$animationName} {
-        @content;
-    }
-    @keyframes #{$animationName} {
-        @content;
-    }
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-ms-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+
+  @keyframes #{$animationName} {
+    @content;
+  }
 }
 
 @mixin router-page-show {
-    :host {
-        animation: showUp 1s ease-in;
-    }
+  :host {
+    animation: showUp 1s ease-in;
+  }
 }
 
 @include keyframes(showUp) {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

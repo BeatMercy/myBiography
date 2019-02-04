@@ -1,7 +1,7 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations';
-import { ViewportScroller } from '@angular/common';
-import { supportsScrollBehavior } from '@angular/cdk/platform';
+import { Component, OnInit, HostListener } from '@angular/core'
+import { trigger, state, style, transition, animate } from '@angular/animations'
+import { ViewportScroller } from '@angular/common'
+import { supportsScrollBehavior } from '@angular/cdk/platform'
 
 @Component({
   selector: 'app-root',
@@ -40,22 +40,22 @@ import { supportsScrollBehavior } from '@angular/cdk/platform';
  *  网站导航架构
  */
 export class AppComponent implements OnInit {
-  ACTIVATED_STATE = 'activated';
-  AWAIT_STATE = 'await';
-  SLEEP_STATE = 'sleep';
+  ACTIVATED_STATE = 'activated'
+  AWAIT_STATE = 'await'
+  SLEEP_STATE = 'sleep'
 
-  FOO_COLOR = '#f60';
-  VISION_COLOR = '#ffff00';
-  TECH_COLOR = '#0e76cc';
+  FOO_COLOR = '#f60'
+  VISION_COLOR = '#ffff00'
+  TECH_COLOR = '#0e76cc'
 
 
-  presentColor = this.TECH_COLOR;
-  presentState = this.ACTIVATED_STATE;
-  previousYPos = 0;
+  presentColor = this.TECH_COLOR
+  presentState = this.ACTIVATED_STATE
+  previousYPos = 0
 
   constructor(private scroll: ViewportScroller) {
     if (supportsScrollBehavior()) {
-      console.log('support scroll behavior');
+      console.log('support scroll behavior')
     }
   }
 
@@ -67,12 +67,12 @@ export class AppComponent implements OnInit {
    */
   changePresentColor(color: string) {
     switch (color) {
-      case this.FOO_COLOR: this.presentColor = this.FOO_COLOR; break;
-      case this.VISION_COLOR: this.presentColor = this.VISION_COLOR; break;
-      case this.TECH_COLOR: this.presentColor = this.TECH_COLOR; break;
-      default: this.presentColor = this.TECH_COLOR;
+      case this.FOO_COLOR: this.presentColor = this.FOO_COLOR; break
+      case this.VISION_COLOR: this.presentColor = this.VISION_COLOR; break
+      case this.TECH_COLOR: this.presentColor = this.TECH_COLOR; break
+      default: this.presentColor = this.TECH_COLOR
     }
-    this.presentState = this.ACTIVATED_STATE;
+    this.presentState = this.ACTIVATED_STATE
   }
 
   /**
@@ -80,54 +80,54 @@ export class AppComponent implements OnInit {
    */
   @HostListener('window:scroll', [])
   onScroll() {
-    const presentYPos = this.scroll.getScrollPosition()[1];
-    const posDiff = presentYPos - this.previousYPos;
-    this.previousYPos = presentYPos;
+    const presentYPos = this.scroll.getScrollPosition()[1]
+    const posDiff = presentYPos - this.previousYPos
+    this.previousYPos = presentYPos
     if (posDiff > 10 && presentYPos > 60) {
       // 下滑 swip down
-      this.presentState = this.SLEEP_STATE;
+      this.presentState = this.SLEEP_STATE
     } else if (posDiff < -30 || presentYPos <= 60) {
       // 上划 swip up
-      this.presentState = this.AWAIT_STATE;
+      this.presentState = this.AWAIT_STATE
     }
   }
 
   getExpandColor(name: string): string {
     switch (name) {
       case this.TECH_COLOR:
-        return this.presentColor === this.TECH_COLOR ? this.presentState : this.SLEEP_STATE;
+        return this.presentColor === this.TECH_COLOR ? this.presentState : this.SLEEP_STATE
       case this.VISION_COLOR:
-        return this.presentColor === this.VISION_COLOR ? this.presentState : this.SLEEP_STATE;
+        return this.presentColor === this.VISION_COLOR ? this.presentState : this.SLEEP_STATE
       case this.FOO_COLOR:
-        return this.presentColor === this.FOO_COLOR ? this.presentState : this.SLEEP_STATE;
-      default: return this.SLEEP_STATE;
+        return this.presentColor === this.FOO_COLOR ? this.presentState : this.SLEEP_STATE
+      default: return this.SLEEP_STATE
     }
   }
   previous(): void {
     switch (this.presentColor) {
       case this.TECH_COLOR:
-        this.changePresentColor(this.VISION_COLOR);
-        break;
+        this.changePresentColor(this.VISION_COLOR)
+        break
       case this.VISION_COLOR:
-        this.changePresentColor( this.FOO_COLOR);
-        break;
+        this.changePresentColor(this.FOO_COLOR)
+        break
       case this.FOO_COLOR:
-        this.changePresentColor(this.TECH_COLOR);
-        break;
+        this.changePresentColor(this.TECH_COLOR)
+        break
     }
   }
 
   next(): void {
     switch (this.presentColor) {
       case this.TECH_COLOR:
-        this.changePresentColor(this.FOO_COLOR);
-        break;
+        this.changePresentColor(this.FOO_COLOR)
+        break
       case this.VISION_COLOR:
-        this.changePresentColor(this.TECH_COLOR);
-        break;
+        this.changePresentColor(this.TECH_COLOR)
+        break
       case this.FOO_COLOR:
-        this.changePresentColor(this.VISION_COLOR);
-        break;
+        this.changePresentColor(this.VISION_COLOR)
+        break
     }
   }
 
@@ -136,6 +136,6 @@ export class AppComponent implements OnInit {
    * @param ms 等待时间，单位ms
    */
   sleep(ms: number) {
-    return new Promise(nulTask => setTimeout(nulTask, ms));
+    return new Promise(nulTask => setTimeout(nulTask, ms))
   }
 }
