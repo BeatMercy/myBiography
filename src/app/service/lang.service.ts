@@ -16,14 +16,11 @@ export class Lang {
 @Injectable()
 export class LangService {
 
-    private langState = 'cn'
-
-    constructor(language: string) {
-        this.langState = language
+    constructor() {
     }
 
-    getLang(): Lang {
-        switch (this.langState) {
+    getLang(language: string): Lang {
+        switch (language) {
             case LANGUAGE.CN: return LANG_CN
             case LANGUAGE.EN: return LANG_EN
             case LANGUAGE.JP: return LANG_JP
