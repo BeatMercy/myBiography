@@ -3,6 +3,16 @@ import { LANG_CN } from '../mock-datas/i18n.CN'
 import { LANG_EN } from '../mock-datas/i18n.EN'
 import { LANG_JP } from '../mock-datas/i18n.JP'
 
+export const LANGUAGE = {
+    CN: 'cn',
+    EN: 'en',
+    JP: 'jp'
+}
+export class Lang {
+    FAIL_TO_SUBMIT: string
+    FAIL_TO_REACH: string
+}
+
 @Injectable()
 export class LangService {
 
@@ -23,13 +33,6 @@ export class LangService {
 
 }
 
-export const LANGUAGE = {
-    CN: 'cn',
-    EN: 'en',
-    JP: 'jp'
-}
-export class Lang {
-    FAIL_TO_SUBMIT: string
-    FAIL_TO_REACH: string
-}
+
+
 

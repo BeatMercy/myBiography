@@ -67,6 +67,7 @@ $counterBg: #222;
 
 .marsonry>.col>.item {
   transition: .2s ease-in;
+  border-radius:10px;
   @include setColorAndHover($itemBg1);
 
   &>.thumbnail {
@@ -86,10 +87,10 @@ $counterBg: #222;
 
   & .tags_area>a {
     text-decoration: none;
-    color: white;
+    color: #f39668;
+    font-size: 12px;
     border-radius: 5px;
-    background-color: #FF7F51;
     margin: 0 4px 4px 0;
-    padding: 5px;
+    padding: 2px 5px;
   }
 }
